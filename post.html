@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post — Vladyslav Zhuravel</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved !== 'light') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="dot-accent"></div>
+
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="index.html"><img src="img/logo-white.svg" alt="Logo" class="nav-logo-img"></a>
+      <a href="index.html" class="nav-logo">vladzsh</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Toggle menu">&#9776;</button>
+    <div class="nav-links">
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#about">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section class="post-page">
+    <div class="container">
+      <a href="blog.html" class="back-link">&larr; Back to Blog</a>
+      <div class="post-content reveal">
+        <!-- Rendered by post.js -->
+      </div>
+    </div>
+  </section>
+
+  <div class="theme-toggle-wrap">
+    <span class="theme-label">Toggle Theme</span>
+    <button class="theme-toggle" aria-label="Toggle theme"></button>
+  </div>
+
+  <footer class="footer">
+    &copy; 2026 Vladyslav Zhuravel. All rights reserved.
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="shared.js"></script>
+  <script src="post.js"></script>
+</body>
+</html>
