@@ -1,13 +1,21 @@
 // === RENDER DATA ===
 function renderProjects(projects) {
-  document.querySelector('.project-list').innerHTML = projects.map(p => `
-    <a href="${p.url}" class="project-item stagger-item" target="_blank" rel="noopener">
+  document.querySelector('.project-list').innerHTML = projects.map(p => {
+    if (p.url) {
+      return `<a href="${p.url}" class="project-item stagger-item" target="_blank" rel="noopener">
       <div class="project-info">
         <h3>${p.name}</h3>
         <p>${p.description}</p>
       </div>
-    </a>
-  `).join('');
+    </a>`;
+    }
+    return `<div class="project-item project-item--no-link stagger-item">
+      <div class="project-info">
+        <h3>${p.name}</h3>
+        <p>${p.description}</p>
+      </div>
+    </div>`;
+  }).join('');
 }
 
 function renderExperience(experience) {
@@ -48,7 +56,7 @@ if (heroContainer) {
   new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        typeText(subtitle, subtitleText, 50);
+        typeText(subtitle, subtitleText, 80);
         obs.unobserve(entry.target);
       }
     });
@@ -96,5 +104,5 @@ window.addEventListener('resize', cacheSectionPositions, { passive: true });
 // === INIT ===
 renderProjects(DATA.projects);
 renderExperience(DATA.experience);
-initStaggerReveal('.project-list, .timeline');
+initStaggerReveal('.project-list, .timeline, .skills-grid');
 updateActiveNav();

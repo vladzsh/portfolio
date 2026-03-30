@@ -4,6 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vladyslav Zhuravel — Portfolio</title>
+  <meta name="description" content="Full Stack Web Developer — Python, Odoo, React, k8s, CI/CD & DevOps, AI Agents">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vladyslav Zhuravel — Portfolio">
+  <meta property="og:description" content="Full Stack Web Developer — Python, Odoo, React, k8s, CI/CD & DevOps, AI Agents">
+  <meta property="og:url" content="https://vladzsh.org/">
+  <meta property="og:image" content="https://vladzsh.org/img/og.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vladyslav Zhuravel — Portfolio">
+  <meta name="twitter:description" content="Full Stack Web Developer — Python, Odoo, React, k8s, CI/CD & DevOps, AI Agents">
+  <meta name="twitter:image" content="https://vladzsh.org/img/og.jpg">
+
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
   <script>
@@ -29,11 +44,12 @@
     </div>
     <button class="nav-hamburger" aria-label="Toggle menu">&#9776;</button>
     <div class="nav-links">
-      <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
       <a href="#about">About</a>
-      <a href="blog.html">Blog</a>
       <a href="#contact">Contact</a>
+      <a href="blog">Blog</a>
     </div>
   </nav>
 
@@ -51,8 +67,17 @@
       <div class="hero-buttons">
         <a href="#contact" class="btn-primary">Contact Me</a>
 
-        <a href="https://github.com/vladzsh" class="btn-secondary" target="_blank" rel="noopener">GitHub</a>
         <a href="https://linkedin.com/in/vladzsh" class="btn-secondary" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/vladzsh" class="btn-secondary" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="alt-transparent">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline reveal">
+        <!-- Rendered from data.json -->
       </div>
     </div>
   </section>
@@ -66,11 +91,34 @@
     </div>
   </section>
 
-  <section id="experience">
+  <section class="skills alt-transparent" id="skills">
     <div class="container">
-      <h2 class="section-title">Experience</h2>
-      <div class="timeline reveal">
-        <!-- Rendered from data.json -->
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid reveal">
+        <div class="skills-col stagger-item">
+          <h3 class="skills-col-title">Backend</h3>
+          <p class="skills-tags">Python, Django, Django REST framework, Django Ninja, FastAPI, Odoo, Pytest, unittest, Celery, Redis, SQLAlchemy, Pydantic, Asyncio, Gunicorn, uWSGI, Poetry, pip, GraphQL (Graphene), WebSockets, OAuth2/JWT, Alembic, Scrapy, BeautifulSoup, Boto3, Pytest, unittest</p>
+        </div>
+        <div class="skills-col stagger-item">
+          <h3 class="skills-col-title">Frontend</h3>
+          <p class="skills-tags">HTML, CSS, SASS/SCSS, JavaScript, TypeScript, React, Next.js, Vite, Webpack</p>
+        </div>
+        <div class="skills-col stagger-item">
+          <h3 class="skills-col-title">DevOps</h3>
+          <p class="skills-tags">Docker, Kubernetes, Ansible, AWS (EC2, S3), Azure, Nginx, Caddy, Linux, Bash, Prometheus, Grafana, Lens, Sentry, Vercel, Heroku, GitHub Actions, Helm</p>
+        </div>
+        <div class="skills-col stagger-item">
+          <h3 class="skills-col-title">Dev Tools</h3>
+          <p class="skills-tags">Git, GitHub, GitLab, CI/CD, GitHub Actions, GitLab CI, Pre-commit hooks, Docker, Docker Compose, Makefile, Postman, Swagger/OpenAPI, VS Code, PyCharm, Claude Code, Cursor, Copilot, Jira, Linear, Confluence, Notion</p>
+        </div>
+        <div class="skills-col stagger-item">
+          <h3 class="skills-col-title">Architecture &amp; Practices</h3>
+          <p class="skills-tags">REST, GraphQL, Microservices, Monolith, Event-driven, CQRS, DDD, TDD, Clean Architecture, SOLID, Design Patterns</p>
+        </div>
+        <div class="skills-col stagger-item">
+          <h3 class="skills-col-title">Other</h3>
+          <p class="skills-tags">Ukranian - native, English - B2, Turkish - elementary</p>
+        </div>
       </div>
     </div>
   </section>
@@ -113,7 +161,7 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           <span>LinkedIn</span>
         </a>
-        <a href="https://t.me/vladzsh" target="_blank" rel="noopener" class="contact-card">
+        <a href="https://t.me/vladyslavcrane" target="_blank" rel="noopener" class="contact-card">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
           <span>Telegram</span>
         </a>
