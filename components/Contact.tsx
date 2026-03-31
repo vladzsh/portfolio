@@ -53,7 +53,7 @@ const contacts = [
   },
   {
     label: "Telegram",
-    href: "https://t.me/vladzsh",
+    href: "https://t.me/vladyslavcrane",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
