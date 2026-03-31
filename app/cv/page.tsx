@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 
 export default function CVPage() {
   return (
-    <section className="flex flex-col items-center px-4 py-6 md:py-8" style={{ height: "calc(100vh - 100px)" }}>
+    <section className="flex flex-col items-center px-4 py-4 md:py-6" style={{ height: "calc(100vh - 140px)" }}>
       <div className="w-full max-w-[900px] flex flex-col h-full gap-4">
         <div className="flex items-center justify-between">
           <h1
