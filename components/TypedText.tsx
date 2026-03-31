@@ -1,0 +1,59 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
+interface TypedTextProps {
+  text: string;
+  speed?: number;
+}
+
+export default function TypedText({ text, speed = 80 }: TypedTextProps) {
+  const [displayed, setDisplayed] = useState("");
+  const [started, setStarted] = useState(false);
+  const ref = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !started) {
+            setStarted(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(el);
+
+    return () => observer.disconnect();
+  }, [started]);
+
+  useEffect(() => {
+    if (!started) return;
+
+    let i = 0;
+    const interval = setInterval(() => {
+      i++;
+      setDisplayed(text.slice(0, i));
+      if (i >= text.length) clearInterval(interval);
+    }, speed);
+
+    return () => clearInterval(interval);
+  }, [started, text, speed]);
+
+  return (
+    <p
+      ref={ref}
+      className="text-xl tracking-[3px] text-green-500 mb-5"
+      style={{ color: "green" }}
+    >
+      {displayed}
+      <span className="typed-cursor">_</span>
+    </p>
+  );
+}

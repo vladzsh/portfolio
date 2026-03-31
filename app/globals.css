@@ -1,0 +1,271 @@
+@import "tailwindcss";
+
+/* === DESIGN TOKENS === */
+@theme {
+  --font-quantico: "Quantico", sans-serif;
+
+  --color-bg: #faf8f6;
+  --color-bg-alt: #F9FAFB;
+  --color-text-primary: #111827;
+  --color-text-secondary: #303034;
+  --color-text-muted: #404246;
+  --color-border: #E5E7EB;
+  --color-dark: #111827;
+  --color-nav-bg: rgba(255, 255, 255, 0.85);
+  --color-bg-alt-transparent: rgba(249, 250, 251, 0.7);
+}
+
+:root {
+  --dot-color-base: #989da47a;
+  --dot-color: #000000;
+  --dot-size: 1px;
+  --dot-spacing: 14px;
+  --dot-accent-opacity: 1;
+}
+
+/* === DARK THEME === */
+[data-theme="dark"] {
+  --color-bg: #0D0C0C;
+  --color-bg-alt: #161515;
+  --color-text-primary: #dedede;
+  --color-text-secondary: #9CA3AF;
+  --color-text-muted: #868d9a;
+  --color-border: #2A2929;
+  --color-dark: #dedede;
+  --color-nav-bg: rgba(13, 12, 12, 0.85);
+  --color-bg-alt-transparent: rgba(22, 21, 21, 0.5);
+  --dot-color-base: #2A2929;
+  --dot-color: #E5E7EB;
+  --dot-accent-opacity: 0.33;
+}
+
+/* === BASE === */
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  font-family: var(--font-quantico);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  background-image: radial-gradient(circle, var(--dot-color-base) var(--dot-size), transparent var(--dot-size));
+  background-size: var(--dot-spacing) var(--dot-spacing);
+  background-attachment: fixed;
+  line-height: 1.6;
+  overflow-x: clip;
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* === DOT ACCENT LAYER === */
+.dot-accent {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(circle, var(--dot-color) var(--dot-size), transparent var(--dot-size));
+  background-size: var(--dot-spacing) var(--dot-spacing);
+  --mx: -1000px;
+  --my: -1000px;
+  -webkit-mask-image: radial-gradient(circle 160px at var(--mx) var(--my), black 0%, black 20%, transparent 70%);
+  mask-image: radial-gradient(circle 160px at var(--mx) var(--my), black 0%, black 20%, transparent 70%);
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.dot-accent.active {
+  opacity: var(--dot-accent-opacity);
+}
+
+/* === NAV === */
+.nav {
+  transition: background 0.6s, backdrop-filter 0.6s, border-color 0.6s;
+}
+
+.nav.scrolled {
+  background: var(--color-nav-bg);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-bottom-color: var(--color-border);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 1.5px;
+  background: var(--color-text-primary);
+  transition: width 0.6s ease, left 0.6s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* === TYPED CURSOR === */
+.typed-cursor {
+  display: inline;
+  color: green;
+  animation: blink 1.5s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* === PROJECTS === */
+.project-item::after {
+  content: '\2192';
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  flex-shrink: 0;
+}
+
+.project-item:hover {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.06), transparent 60%);
+}
+
+.project-item:hover::after {
+  opacity: 1;
+}
+
+.project-item--no-link::after {
+  display: none;
+}
+
+.project-item--no-link:hover {
+  background: none;
+}
+
+.project-info h3 {
+  background-image: linear-gradient(var(--color-text-primary), var(--color-text-primary));
+  background-size: 0% 1.5px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  transition: background-size 0.8s ease;
+}
+
+.project-item:hover .project-info h3 {
+  background-size: 100% 1.5px;
+}
+
+/* === TIMELINE === */
+.timeline-dot {
+  box-shadow: 0 0 0 4px var(--color-bg);
+}
+
+/* === CONTACT === */
+.contact-card:hover svg {
+  transform: translateY(-2px);
+}
+
+/* === THEME TOGGLE === */
+.theme-toggle-wrap {
+  background: var(--color-nav-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* === SCROLL REVEAL === */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-item {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.stagger-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === POST BODY === */
+.post-body p {
+  margin-bottom: 1.25em;
+}
+
+.post-body h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 2em 0 0.75em;
+}
+
+.post-body h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 1.5em 0 0.5em;
+}
+
+.post-body ul,
+.post-body ol {
+  margin: 0 0 1.25em 1.5em;
+  list-style: disc;
+}
+
+.post-body ol {
+  list-style: decimal;
+}
+
+.post-body li {
+  margin-bottom: 0.4em;
+}
+
+.post-body code {
+  background: var(--color-bg-alt);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+.post-body blockquote {
+  border-left: 3px solid var(--color-border);
+  padding-left: 1rem;
+  color: var(--color-text-muted);
+  margin: 0 0 1.25em;
+  font-style: italic;
+}
+
+.post-body img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 1.5em 0;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .dot-accent {
+    display: none;
+  }
+
+  .theme-toggle-wrap {
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .theme-label-text {
+    display: none;
+  }
+}
