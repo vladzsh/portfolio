@@ -6,9 +6,9 @@ export const metadata: Metadata = {
 
 export default function CVPage() {
   return (
-    <section className="min-h-[calc(100vh-80px)] flex flex-col items-center px-4 py-8 md:py-12">
-      <div className="w-full max-w-[900px] flex flex-col items-center gap-6">
-        <div className="flex items-center justify-between w-full">
+    <section className="flex flex-col items-center px-4 py-6 md:py-8" style={{ height: "calc(100vh - 100px)" }}>
+      <div className="w-full max-w-[900px] flex flex-col h-full gap-4">
+        <div className="flex items-center justify-between">
           <h1
             className="text-2xl font-bold"
             style={{ color: "var(--color-text-primary)" }}
@@ -30,11 +30,8 @@ export default function CVPage() {
 
         <iframe
           src="/cv.pdf"
-          className="w-full rounded-lg border"
-          style={{
-            height: "calc(100vh - 180px)",
-            borderColor: "var(--color-border)",
-          }}
+          className="w-full flex-1 rounded-lg border"
+          style={{ borderColor: "var(--color-border)" }}
           title="Vladyslav Zhuravel — CV"
         />
       </div>

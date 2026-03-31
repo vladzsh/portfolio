@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useCallback, useRef } from "react";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -16,9 +15,7 @@ const NAV_ITEMS = [
 ];
 
 export default function Nav() {
-  const pathname = usePathname();
-  const isHome = pathname === "/";
-  const [scrolled, setScrolled] = useState(!isHome);
+  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeId, setActiveId] = useState("");
   const [isDark, setIsDark] = useState(true);
@@ -66,7 +63,7 @@ export default function Nav() {
 
     const handleScroll = () => {
       const threshold = window.innerWidth <= 768 ? 20 : 300;
-      setScrolled(!isHome || window.scrollY > threshold);
+      setScrolled(window.scrollY > threshold);
       setMenuOpen(false);
 
       // Active section detection
