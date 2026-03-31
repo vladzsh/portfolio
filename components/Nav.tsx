@@ -64,7 +64,6 @@ export default function Nav() {
     const handleScroll = () => {
       const threshold = window.innerWidth <= 920 ? 20 : 300;
       setScrolled(window.scrollY > threshold);
-      setMenuOpen(false);
 
       // Active section detection
       const scrollY = window.scrollY + 120;
