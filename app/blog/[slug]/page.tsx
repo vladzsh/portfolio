@@ -31,7 +31,7 @@ export default async function BlogPostPage({
   }
 
   return (
-    <section className="min-h-[80vh] py-12 px-6 md:py-[72px] flex items-center justify-center">
+    <section className="min-h-[80vh] py-12 px-6 md:py-[72px] flex justify-center">
       <div className="w-full max-w-[1100px] mx-auto px-4 md:px-12">
         <Link
           href="/blog"

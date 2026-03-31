@@ -34,7 +34,7 @@ export default function ScrollReveal({
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.01 }
     );
 
     observer.observe(el);
