@@ -134,10 +134,10 @@ export default function Nav() {
       </button>
 
       <div
-        className={`nav-links hidden min-[920px]:flex items-center gap-6 ${
-          menuOpen ? "!flex flex-col gap-4 pt-6 pb-6 w-full absolute top-full left-0 px-4" : ""
+        className={`nav nav-links min-[920px]:!flex min-[920px]:!opacity-100 min-[920px]:!pointer-events-auto items-center gap-6 flex flex-col min-[920px]:flex-row gap-4 min-[920px]:gap-6 pt-6 min-[920px]:pt-0 pb-6 min-[920px]:pb-0 w-full min-[920px]:w-auto absolute min-[920px]:relative top-full min-[920px]:top-auto left-0 px-4 min-[920px]:px-0 transition-all duration-[0.4s] ease-out ${
+          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none min-[920px]:pointer-events-auto"
         }`}
-        style={menuOpen ? { background: "var(--color-nav-bg)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" } : undefined}
+        style={{ background: menuOpen ? "var(--color-nav-bg)" : undefined, backdropFilter: menuOpen ? "blur(12px)" : undefined, WebkitBackdropFilter: menuOpen ? "blur(12px)" : undefined }}
       >
         {NAV_ITEMS.map(({ label, href }) => {
           const isHashLink = href.startsWith("/#");
