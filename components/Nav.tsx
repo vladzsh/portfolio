@@ -62,7 +62,7 @@ export default function Nav() {
     cacheSections();
 
     const handleScroll = () => {
-      const threshold = window.innerWidth <= 768 ? 20 : 300;
+      const threshold = window.innerWidth <= 920 ? 20 : 300;
       setScrolled(window.scrollY > threshold);
       setMenuOpen(false);
 
@@ -126,7 +126,7 @@ export default function Nav() {
       </Link>
 
       <button
-        className="nav-hamburger hidden max-md:block bg-none border-none text-2xl text-[var(--color-text-secondary)] cursor-pointer"
+        className="nav-hamburger hidden max-[920px]:block bg-none border-none text-2xl text-[var(--color-text-secondary)] cursor-pointer"
         onClick={() => setMenuOpen((v) => !v)}
         aria-label="Toggle navigation menu"
       >
@@ -134,7 +134,7 @@ export default function Nav() {
       </button>
 
       <div
-        className={`nav-links hidden md:flex items-center gap-6 ${
+        className={`nav-links hidden min-[920px]:flex items-center gap-6 ${
           menuOpen ? "!flex flex-col gap-4 pt-4 w-full" : ""
         }`}
       >
