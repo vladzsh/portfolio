@@ -109,8 +109,8 @@ function Header() {
           linkedin.com/in/vladzsh
         </Link>
         <Sep />
-        <Link src="https://t.me/vladzsh" style={s.contactLink}>
-          t.me/vladzsh
+        <Link src="https://t.me/vladyslavcrane" style={s.contactLink}>
+          t.me/vladyslavcrane
         </Link>
         <Sep />
         <Link src="https://vladzsh.org" style={s.contactLink}>
