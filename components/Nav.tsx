@@ -10,8 +10,8 @@ const NAV_ITEMS = [
   { label: "Skills", href: "/#skills" },
   { label: "About", href: "/#about" },
   { label: "Blog", href: "/blog" },
-  { label: "CV", href: "/cv" },
   { label: "Contact", href: "/#contact" },
+  { label: "CV", href: "/cv" },
 ];
 
 export default function Nav() {

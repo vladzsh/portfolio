@@ -11,7 +11,7 @@ import {
 } from "@react-pdf/renderer";
 import { writeFileSync } from "fs";
 import { join } from "path";
-import { experience, projects, cvSkills } from "../lib/data";
+import { experience, projects, cvSkills, education } from "../lib/data";
 
 // --- Fonts ---
 Font.register({
@@ -65,6 +65,11 @@ const s = StyleSheet.create({
   expDate: { fontSize: 9, color: C.muted },
   expCompany: { fontSize: 10, color: C.gray, marginBottom: 3 },
   expDesc: { fontSize: 9, color: C.gray, textAlign: "justify", lineHeight: 1.6 },
+  eduRow: { marginBottom: 8 },
+  eduHeader: { flexDirection: "row", justifyContent: "space-between", marginBottom: 1 },
+  eduInstitution: { fontSize: 10, fontWeight: 700 },
+  eduDegree: { fontSize: 9, color: C.gray },
+  eduDate: { fontSize: 8, color: C.muted },
   projRow: { marginBottom: 10 },
   projName: { fontSize: 10, fontWeight: 700 },
   projDesc: { fontSize: 9, color: C.gray, lineHeight: 1.6 },
@@ -159,6 +164,16 @@ function CV() {
             </View>
             <Text style={s.expCompany}>{e.company}</Text>
             <Text style={s.expDesc}>{stripHtml(e.description)}</Text>
+          </View>
+        ))}
+        <Text style={s.sectionTitle}>EDUCATION</Text>
+        {education.map((e, i) => (
+          <View key={i} style={s.eduRow}>
+            <View style={s.eduHeader}>
+              <Text style={s.eduInstitution}>{e.institution}</Text>
+              <Text style={s.eduDate}>{e.date}</Text>
+            </View>
+            <Text style={s.eduDegree}>{e.degree}</Text>
           </View>
         ))}
         <PageNum />

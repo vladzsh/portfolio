@@ -76,27 +76,63 @@ export const experience = [
 export const skills = [
   {
     title: "Backend",
-    tags: "Python, Django, Django REST framework, Django Ninja, FastAPI, Odoo, Pytest, unittest, Celery, Redis, SQLAlchemy, Pydantic, Asyncio, Gunicorn, uWSGI, Poetry, pip, GraphQL (Graphene), WebSockets, OAuth2/JWT, Alembic, Scrapy, BeautifulSoup, Boto3",
+    tags: "Python, Django, Django REST framework, Django Ninja, FastAPI, Odoo, Celery, Redis, SQLAlchemy, Pydantic, Asyncio, Gunicorn, uWSGI, Poetry, pip, GraphQL (Graphene), WebSockets, OAuth2/JWT, Alembic, Scrapy, BeautifulSoup, Boto3",
   },
   {
     title: "Frontend",
-    tags: "HTML, CSS, SASS/SCSS, JavaScript, TypeScript, React, Next.js, Vite, Webpack",
+    tags: "HTML, CSS, SASS/SCSS, JavaScript, TypeScript, React, Next.js, Tailwind CSS, Vite, Webpack, Accessibility (a11y), Web APIs, Performance optimization",
   },
   {
-    title: "DevOps",
-    tags: "Docker, Kubernetes, Ansible, AWS (EC2, S3), Azure, Nginx, Caddy, Linux, Bash, Prometheus, Grafana, Lens, Sentry, Vercel, Heroku, GitHub Actions, Helm",
+    title: "Databases & Caching",
+    tags: "PostgreSQL, MySQL, MongoDB, Redis, Query optimization, Indexing, Database design, N+1 problem solving",
   },
   {
-    title: "Dev Tools",
-    tags: "Git, GitHub, GitLab, CI/CD, GitHub Actions, GitLab CI, Pre-commit hooks, Docker, Docker Compose, Makefile, Postman, Swagger/OpenAPI, VS Code, PyCharm, Claude Code, Cursor, Copilot, Jira, Linear, Confluence, Notion",
+    title: "DevOps & Cloud",
+    tags: "Docker, Kubernetes, Ansible, AWS (EC2, S3, Lambda, RDS), Azure, GCP, Nginx, Caddy, Linux, Bash, Prometheus, Grafana, Sentry, Vercel, Heroku, GitHub Actions, Helm",
   },
   {
-    title: "Architecture & Practices",
-    tags: "REST, GraphQL, Microservices, Monolith, Event-driven, CQRS, DDD, TDD, Clean Architecture, SOLID, Design Patterns",
+    title: "Dev Tools & Workflow",
+    tags: "Git (advanced), GitHub, GitLab, CI/CD, GitHub Actions, GitLab CI, Pre-commit hooks, Docker Compose, Makefile, Postman, Swagger/OpenAPI, VS Code, PyCharm, Claude Code, Cursor, Copilot, Jira, Linear, Confluence, Notion",
   },
   {
-    title: "Testing / QA",
-    tags: "Pytest, unittest",
+    title: "Architecture & Patterns",
+    tags: "REST, GraphQL, Microservices, Event-driven, CQRS, DDD, Clean Architecture, SOLID, Design Patterns, Monolithic architecture",
+  },
+  {
+    title: "Testing & Quality",
+    tags: "Pytest, unittest, Unit testing, Integration testing, E2E testing (Playwright, Cypress), TDD, Test coverage, Performance testing",
+  },
+  {
+    title: "Security & Best Practices",
+    tags: "OWASP, Authentication (OAuth2, JWT, Session-based), Authorization, Encryption, XSS/CSRF prevention, API security, Security headers, Dependency scanning",
+  },
+];
+
+export const education = [
+  {
+    institution: "O.M. Beketov National University of Urban Economy in Kharkiv",
+    degree: "Master's Degree, Electrical Energetics, Electrical Engineering and Electromechanics",
+    date: "Sep 2019 — Jan 2021",
+  },
+  {
+    institution: "O.M. Beketov National University of Urban Economy in Kharkiv",
+    degree: "Bachelor's Degree, Electrical and Electronics Engineering",
+    date: "Sep 2016 — Sep 2019",
+  },
+  {
+    institution: "Kharkiv College of Transport Technologies",
+    degree: "Junior Specialist, Electrical and Electronics Engineering",
+    date: "Aug 2012 — Jul 2016",
+  },
+  {
+    institution: "IT STEP Academy",
+    degree: "Python Developer, Computer Software Engineering",
+    date: "Oct 2020 — Jun 2021",
+  },
+  {
+    institution: "IT STEP Academy",
+    degree: "Web Developer, Computer Software Engineering",
+    date: "Oct 2020 — Jun 2021",
   },
 ];
 
