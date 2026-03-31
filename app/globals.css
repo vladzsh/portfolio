@@ -3,7 +3,9 @@
 /* === DESIGN TOKENS === */
 @theme {
   --font-quantico: "Quantico", sans-serif;
+}
 
+:root {
   --color-bg: #faf8f6;
   --color-bg-alt: #F9FAFB;
   --color-text-primary: #111827;
@@ -13,9 +15,6 @@
   --color-dark: #111827;
   --color-nav-bg: rgba(255, 255, 255, 0.85);
   --color-bg-alt-transparent: rgba(249, 250, 251, 0.7);
-}
-
-:root {
   --dot-color-base: #989da47a;
   --dot-color: #000000;
   --dot-size: 1px;
