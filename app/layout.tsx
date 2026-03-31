@@ -46,10 +46,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={quantico.className}>
+      <body className={`${quantico.className} min-h-screen flex flex-col`}>
         <DotAccent />
         <Nav />
-        {children}
+        <main className="flex-1">{children}</main>
         <ThemeToggle />
         <Footer />
       </body>
