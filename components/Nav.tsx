@@ -5,12 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 const NAV_ITEMS = [
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "About", href: "#about" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Skills", href: "/#skills" },
+  { label: "About", href: "/#about" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Nav() {
@@ -138,8 +138,8 @@ export default function Nav() {
         }`}
       >
         {NAV_ITEMS.map(({ label, href }) => {
-          const isHashLink = href.startsWith("#");
-          const isActive = isHashLink && activeId === href.slice(1);
+          const isHashLink = href.startsWith("/#");
+          const isActive = isHashLink && activeId === href.slice(2);
 
           if (isHashLink) {
             return (
