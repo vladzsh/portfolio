@@ -107,7 +107,7 @@ export default function Nav() {
 
   return (
     <nav
-      className={`nav sticky top-0 z-100 flex flex-wrap justify-between items-center border-b border-transparent tracking-[3px] px-12 py-3 bg-transparent max-md:px-4${
+      className={`nav sticky top-0 z-100 flex justify-between items-center border-b border-transparent tracking-[3px] px-12 py-3 bg-transparent max-[920px]:px-4${
         scrolled ? " scrolled" : ""
       }`}
     >
@@ -135,8 +135,9 @@ export default function Nav() {
 
       <div
         className={`nav-links hidden min-[920px]:flex items-center gap-6 ${
-          menuOpen ? "!flex flex-col gap-4 pt-4 w-full" : ""
+          menuOpen ? "!flex flex-col gap-4 pt-6 pb-6 w-full absolute top-full left-0 px-4" : ""
         }`}
+        style={menuOpen ? { background: "var(--color-nav-bg)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" } : undefined}
       >
         {NAV_ITEMS.map(({ label, href }) => {
           const isHashLink = href.startsWith("/#");
