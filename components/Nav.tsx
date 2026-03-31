@@ -140,10 +140,17 @@ export default function Nav() {
       </button>
 
       <div
-        className={`nav nav-links min-[920px]:!flex min-[920px]:!opacity-100 min-[920px]:!pointer-events-auto items-center gap-6 flex flex-col min-[920px]:flex-row gap-4 min-[920px]:gap-6 pt-6 min-[920px]:pt-0 pb-6 min-[920px]:pb-0 w-full min-[920px]:w-auto absolute min-[920px]:relative top-full min-[920px]:top-auto left-0 px-4 min-[920px]:px-0 transition-all duration-[0.4s] ease-out ${
-          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none min-[920px]:pointer-events-auto"
+        className={`nav nav-links min-[920px]:!flex min-[920px]:!opacity-100 min-[920px]:!pointer-events-auto min-[920px]:!translate-y-0 min-[920px]:!max-h-none items-center gap-6 flex flex-col min-[920px]:flex-row gap-4 min-[920px]:gap-6 pt-6 min-[920px]:pt-0 pb-6 min-[920px]:pb-0 w-full min-[920px]:w-auto absolute min-[920px]:relative top-full min-[920px]:top-auto left-0 px-4 min-[920px]:px-0 overflow-hidden min-[920px]:overflow-visible ${
+          menuOpen
+            ? "opacity-100 pointer-events-auto translate-y-0 max-h-[500px]"
+            : "opacity-0 pointer-events-none -translate-y-2 max-h-0 min-[920px]:pointer-events-auto"
         }`}
-        style={{ background: "var(--color-nav-bg)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
+        style={{
+          background: "var(--color-nav-bg)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+          transition: "opacity 0.35s ease, transform 0.35s ease, max-height 0.35s ease",
+        }}
       >
         {NAV_ITEMS.map(({ label, href }) => {
           const isHashLink = href.startsWith("/#");
