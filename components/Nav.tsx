@@ -137,7 +137,7 @@ export default function Nav() {
         className={`nav-links hidden min-[920px]:flex items-center gap-6 ${
           menuOpen ? "!flex flex-col gap-4 pt-6 pb-6 w-full absolute top-full left-0 px-4" : ""
         }`}
-        style={menuOpen ? { background: "var(--color-bg)", borderBottom: "1px solid var(--color-border)" } : undefined}
+        style={menuOpen ? { background: "var(--color-nav-bg)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" } : undefined}
       >
         {NAV_ITEMS.map(({ label, href }) => {
           const isHashLink = href.startsWith("/#");
