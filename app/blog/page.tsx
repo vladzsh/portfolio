@@ -11,7 +11,7 @@ export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <section className="min-h-[80vh] py-12 px-6 md:py-[72px] flex items-center justify-center">
+    <section className="py-12 px-6 md:py-[72px] flex justify-center">
       <div className="w-full max-w-[1100px] mx-auto px-4 md:px-12">
         <h1 className="text-2xl font-bold text-[var(--color-text-primary)] mb-8">
           Blog
