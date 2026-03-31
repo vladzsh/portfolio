@@ -91,7 +91,7 @@ export default function Contact() {
     >
       <div className="w-full max-w-[1100px] mx-auto px-4 md:px-12">
         <h2 className="text-2xl font-bold text-[var(--color-text-primary)] mb-8">
-          Let&apos;s Connect
+          Let&apos;s Build Something Great Together
         </h2>
 
         <ScrollReveal>

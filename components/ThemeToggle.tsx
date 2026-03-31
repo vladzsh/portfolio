@@ -71,7 +71,7 @@ export default function ThemeToggle() {
 
   return (
     <div className="group theme-toggle-wrap fixed bottom-6 right-6 flex items-center gap-4 z-[99] rounded-full px-3 py-1.5 pl-4 border border-[var(--color-border)]">
-      <span className="theme-label-text text-sm max-w-0 overflow-hidden opacity-0 transition-all duration-[0.6s] pointer-events-none whitespace-nowrap group-hover:max-w-[120px] group-hover:opacity-100" style={{ color: 'var(--color-text-muted)' }}>
+      <span className="theme-label-text text-sm whitespace-nowrap max-md:hidden" style={{ color: 'var(--color-text-muted)' }}>
         Toggle Theme
       </span>
       <button
