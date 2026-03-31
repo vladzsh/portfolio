@@ -61,9 +61,16 @@ export default function Nav() {
   useEffect(() => {
     cacheSections();
 
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
       const threshold = window.innerWidth <= 920 ? 20 : 300;
       setScrolled(window.scrollY > threshold);
+
+      if (Math.abs(window.scrollY - lastScrollY) > 50) {
+        setMenuOpen(false);
+        lastScrollY = window.scrollY;
+      }
 
       // Active section detection
       const scrollY = window.scrollY + 120;
