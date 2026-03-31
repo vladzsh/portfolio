@@ -133,8 +133,8 @@ export default function Nav() {
       </button>
 
       <div
-        className={`nav-links flex items-center gap-6 max-md:flex-col max-md:gap-4 max-md:pt-4 max-md:w-full${
-          menuOpen ? " active" : ""
+        className={`nav-links flex items-center gap-6 max-md:flex-col max-md:gap-4 max-md:pt-4 max-md:w-full ${
+          menuOpen ? "max-md:flex" : "max-md:hidden"
         }`}
       >
         {NAV_ITEMS.map(({ label, href }) => {
