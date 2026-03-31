@@ -107,8 +107,8 @@ export default function Nav() {
 
   return (
     <nav
-      className={`nav sticky top-0 z-100 flex justify-between items-center border-b border-transparent tracking-[3px] px-12 py-3 bg-transparent max-[920px]:px-4${
-        scrolled ? " scrolled" : ""
+      className={`nav sticky top-0 z-100 flex justify-between items-center border-b border-transparent tracking-[3px] px-12 py-3 bg-transparent max-[920px]:px-3 max-[920px]:py-2${
+        scrolled || menuOpen ? " scrolled" : ""
       }`}
     >
       <Link href="/" className="nav-left flex items-center gap-4">
