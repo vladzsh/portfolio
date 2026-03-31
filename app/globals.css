@@ -236,6 +236,23 @@ a {
   font-size: 0.9em;
 }
 
+.post-body pre {
+  background: #0d1117;
+  border-radius: 8px;
+  padding: 1.25em 1.5em;
+  margin: 0 0 1.25em;
+  overflow-x: auto;
+}
+
+.post-body pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  color: #3fb950;
+  font-size: 0.85em;
+  line-height: 1.7;
+}
+
 .post-body blockquote {
   border-left: 3px solid var(--color-border);
   padding-left: 1rem;

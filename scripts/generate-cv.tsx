@@ -11,7 +11,7 @@ import {
 } from "@react-pdf/renderer";
 import { writeFileSync } from "fs";
 import { join } from "path";
-import { experience, projects, skills } from "../lib/data";
+import { experience, projects, cvSkills } from "../lib/data";
 
 // --- Fonts ---
 Font.register({
@@ -191,7 +191,7 @@ function CV() {
         <Header />
         <Text style={s.sectionTitle}>SKILLS</Text>
         <View style={s.skillsGrid}>
-          {skills.map((sk, i) => (
+          {cvSkills.map((sk, i) => (
             <View key={i} style={s.skillCol}>
               <Text style={s.skillTitle}>{sk.title}</Text>
               <Text style={s.skillTags}>{sk.tags}</Text>

@@ -99,3 +99,11 @@ export const skills = [
     tags: "Pytest, unittest",
   },
 ];
+
+export const cvSkills = [
+  ...skills,
+  {
+    title: "Languages",
+    tags: "English — B1, Ukrainian — Native, Russian — Native, Turkish — Elementary",
+  },
+];
