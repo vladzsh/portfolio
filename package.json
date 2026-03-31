@@ -4,26 +4,29 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "tsx scripts/generate-cv.tsx && next build",
+    "start": "next start",
+    "generate:cv": "tsx scripts/generate-cv.tsx"
   },
   "dependencies": {
+    "@react-pdf/renderer": "^4.3.2",
+    "gray-matter": "^4.0.3",
     "next": "^15.3.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "gray-matter": "^4.0.3",
-    "unified": "^11.0.5",
+    "rehype-raw": "^7.0.0",
+    "rehype-stringify": "^10.0.1",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.1",
-    "rehype-stringify": "^10.0.1",
-    "rehype-raw": "^7.0.0"
+    "tsx": "^4.21.0",
+    "unified": "^11.0.5"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.4",
     "@types/node": "^22.15.3",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
-    "typescript": "^5.8.3",
-    "@tailwindcss/postcss": "^4.1.4",
-    "tailwindcss": "^4.1.4"
+    "tailwindcss": "^4.1.4",
+    "typescript": "^5.8.3"
   }
 }

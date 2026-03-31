@@ -27,6 +27,14 @@ export default function Hero() {
               Contact Me
             </a>
             <a
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-[var(--color-border)] text-[var(--color-text-primary)] px-6 py-2.5 rounded-lg text-lg hover:border-[var(--color-text-secondary)] max-md:px-4 max-md:text-base"
+            >
+              Download CV
+            </a>
+            <a
               href="https://linkedin.com/in/vladzsh"
               target="_blank"
               rel="noopener noreferrer"
