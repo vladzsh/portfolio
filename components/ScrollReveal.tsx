@@ -23,13 +23,12 @@ export default function ScrollReveal({
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
             if (stagger) {
               const items = entry.target.querySelectorAll(".stagger-item");
               items.forEach((item, i) => {
                 setTimeout(() => item.classList.add("visible"), i * 240);
               });
-            } else {
-              entry.target.classList.add("visible");
             }
             observer.unobserve(entry.target);
           }

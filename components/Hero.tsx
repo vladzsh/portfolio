@@ -21,7 +21,8 @@ export default function Hero() {
           <div className="flex flex-wrap gap-3 max-md:flex-col max-md:items-start max-md:gap-2">
             <a
               href="#contact"
-              className="bg-[var(--color-dark)] text-[var(--color-bg)] px-6 py-2.5 rounded-lg text-lg font-medium hover:opacity-85 max-md:px-4 max-md:text-base"
+              className="px-6 py-2.5 rounded-lg text-lg font-medium hover:opacity-85 max-md:px-4 max-md:text-base"
+              style={{ backgroundColor: 'var(--color-dark)', color: 'var(--color-bg)' }}
             >
               Contact Me
             </a>

@@ -70,13 +70,14 @@ export default function ThemeToggle() {
   if (!mounted) return null;
 
   return (
-    <div className="theme-toggle-wrap fixed bottom-6 right-6 flex items-center gap-4 z-[99] rounded-full px-3 py-1.5 pl-4 border border-[var(--color-border)]">
-      <span className="theme-label-text text-sm text-[var(--color-text-muted)] translate-x-2 opacity-0 transition-all duration-[0.6s] pointer-events-none whitespace-nowrap group-hover:opacity-100 group-hover:translate-x-0">
+    <div className="group theme-toggle-wrap fixed bottom-6 right-6 flex items-center gap-4 z-[99] rounded-full px-3 py-1.5 pl-4 border border-[var(--color-border)]">
+      <span className="theme-label-text text-sm translate-x-2 opacity-0 transition-all duration-[0.6s] pointer-events-none whitespace-nowrap group-hover:opacity-100 group-hover:translate-x-0" style={{ color: 'var(--color-text-muted)' }}>
         Toggle Theme
       </span>
       <button
         onClick={toggle}
-        className="theme-toggle w-[44px] h-[44px] border-none bg-none cursor-pointer flex items-center justify-center text-[var(--color-text-primary)] shrink-0 max-md:opacity-50"
+        className="theme-toggle w-[44px] h-[44px] border-none bg-transparent cursor-pointer flex items-center justify-center shrink-0 max-md:opacity-50"
+        style={{ color: 'var(--color-text-primary)' }}
         aria-label="Toggle theme"
       >
         {isDark ? <SunIcon /> : <MoonIcon />}
