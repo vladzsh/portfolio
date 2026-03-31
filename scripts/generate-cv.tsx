@@ -43,7 +43,7 @@ const s = StyleSheet.create({
     paddingHorizontal: 40,
     lineHeight: 1.5,
   },
-  name: { fontSize: 22, fontWeight: 700, letterSpacing: 2, marginBottom: 6 },
+  name: { fontSize: 22, fontWeight: 700, letterSpacing: 2, lineHeight: 1.2, marginBottom: 12 },
   title: { fontSize: 11, color: C.accent, letterSpacing: 1, marginBottom: 10 },
   contactRow: { flexDirection: "row", flexWrap: "wrap", gap: 4, marginBottom: 4 },
   contactLink: { fontSize: 8, color: C.gray, textDecoration: "none" },
