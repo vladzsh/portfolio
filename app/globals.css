@@ -225,11 +225,6 @@ a {
   background-size: 100% 1.5px;
 }
 
-/* === TIMELINE === */
-.timeline-dot {
-  box-shadow: 0 0 0 4px var(--color-bg);
-}
-
 /* === CONTACT === */
 .contact-card:hover svg {
   transform: translateY(-2px);

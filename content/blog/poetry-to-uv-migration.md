@@ -1,6 +1,6 @@
 ---
 title: "Why We Switched From Poetry to uv — and How It Made Our Docker Builds 10x Faster"
-date: "2026-03-31"
+date: "2026-02-18"
 excerpt: "We migrated three production Django projects from Poetry to uv. Here's what changed, what broke, and the Dockerfile patterns that cut our build times from minutes to seconds."
 ---
 

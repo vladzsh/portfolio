@@ -31,7 +31,7 @@ export default function TypedText({ text, speed = 80 }: TypedTextProps) {
     observer.observe(el);
 
     return () => observer.disconnect();
-  }, [started]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (!started) return;
@@ -49,7 +49,7 @@ export default function TypedText({ text, speed = 80 }: TypedTextProps) {
   return (
     <p
       ref={ref}
-      className="text-xl tracking-[3px] text-green-500 mb-5"
+      className="text-xl tracking-[3px] mb-5"
       style={{ color: "green" }}
     >
       {displayed}

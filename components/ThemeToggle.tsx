@@ -66,7 +66,6 @@ export default function ThemeToggle() {
     setIsDark(next);
   };
 
-  // Prevent hydration mismatch — render nothing until mounted
   if (!mounted) return null;
 
   return (

@@ -14,6 +14,7 @@ export default function ScrollReveal({
   stagger = false,
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const timersRef = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => {
     const el = ref.current;
@@ -27,7 +28,8 @@ export default function ScrollReveal({
             if (stagger) {
               const items = entry.target.querySelectorAll(".stagger-item");
               items.forEach((item, i) => {
-                setTimeout(() => item.classList.add("visible"), i * 240);
+                const id = setTimeout(() => item.classList.add("visible"), i * 240);
+                timersRef.current.push(id);
               });
             }
             observer.unobserve(entry.target);
@@ -39,7 +41,11 @@ export default function ScrollReveal({
 
     observer.observe(el);
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      timersRef.current.forEach(clearTimeout);
+      timersRef.current = [];
+    };
   }, [stagger]);
 
   return (

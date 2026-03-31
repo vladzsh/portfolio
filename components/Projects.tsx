@@ -1,6 +1,9 @@
 import { projects } from "@/lib/data";
 import ScrollReveal from "@/components/ScrollReveal";
 
+const itemCls =
+  "stagger-item project-item flex justify-between items-center py-4 px-1 border-b border-[var(--color-border)] transition-all duration-800 max-md:flex-col max-md:items-start";
+
 export default function Projects() {
   return (
     <section
@@ -13,41 +16,32 @@ export default function Projects() {
         </h2>
 
         <ScrollReveal stagger>
-          <div className="border-t border-[#5e6063]">
+          <div className="border-t border-[var(--color-border)]">
             {projects.map((project, i) => {
-              const inner = (
-                <>
-                  <div className="project-info">
-                    <h3 className="text-lg font-semibold text-[var(--color-text-primary)] inline">
-                      {project.name}
-                    </h3>
-                    <p className="text-base text-[var(--color-text-secondary)] text-justify">
-                      {project.description}
-                    </p>
-                  </div>
-                </>
+              const content = (
+                <div className="project-info">
+                  <h3 className="text-lg font-semibold text-[var(--color-text-primary)] inline">
+                    {project.name}
+                  </h3>
+                  <p className="text-base text-[var(--color-text-secondary)] text-justify">
+                    {project.description}
+                  </p>
+                </div>
               );
 
-              if (project.url) {
-                return (
-                  <a
-                    key={i}
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="stagger-item project-item flex justify-between items-center py-4 px-1 border-b border-[#5e6063] transition-all duration-800 max-md:flex-col max-md:items-start"
-                  >
-                    {inner}
-                  </a>
-                );
-              }
-
-              return (
-                <div
-                  key={i}
-                  className="stagger-item project-item project-item--no-link flex justify-between items-center py-4 px-1 border-b border-[#5e6063] transition-all duration-800 max-md:flex-col max-md:items-start"
+              return project.url ? (
+                <a
+                  key={project.name}
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={itemCls}
                 >
-                  {inner}
+                  {content}
+                </a>
+              ) : (
+                <div key={project.name} className={`${itemCls} project-item--no-link`}>
+                  {content}
                 </div>
               );
             })}

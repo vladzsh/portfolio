@@ -95,12 +95,9 @@ export default function Contact() {
         </h2>
 
         <ScrollReveal>
-          <p
-            className="text-lg text-[var(--color-text-secondary)] mb-6"
-            dangerouslySetInnerHTML={{
-              __html: "Have a project in mind? <br> Let&#39;s talk.",
-            }}
-          />
+          <p className="text-lg text-[var(--color-text-secondary)] mb-6">
+            Have a project in mind?<br />Let&apos;s talk.
+          </p>
 
           <div className="flex justify-center gap-4 text-xl max-md:flex-wrap max-md:gap-3">
             {contacts.map((c) => (
