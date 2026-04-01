@@ -49,7 +49,7 @@ export default function TypedText({ text, speed = 80 }: TypedTextProps) {
   return (
     <p
       ref={ref}
-      className="text-xl tracking-[3px] mb-5"
+      className="text-lg md:text-xl tracking-[1px] md:tracking-[3px] mb-5 whitespace-nowrap"
       style={{ color: "green" }}
     >
       {displayed}
