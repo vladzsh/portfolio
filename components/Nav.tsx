@@ -87,7 +87,7 @@ export default function Nav() {
     <nav className={`nav sticky top-0 z-100 flex justify-between items-center border-b border-transparent tracking-[3px] px-12 py-4 max-[920px]:px-4 max-[920px]:py-3${scrolled || menuOpen ? " scrolled" : ""}`}>
       <Link href="/" className="flex items-center gap-4">
         <Image src={logoSrc} alt="Logo" width={40} height={40} className="h-[40px] w-auto" priority />
-        <span style={{ color: "var(--color-text-primary)" }} className="text-lg pt-1">vladzsh</span>
+        <span style={{ color: "var(--color-text-primary)" }} className="text-lg">vladzsh</span>
       </Link>
 
       <button

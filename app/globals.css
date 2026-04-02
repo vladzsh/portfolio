@@ -5,6 +5,14 @@
   --font-quantico: "Quantico", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 40px;
+}
+
 :root {
   --color-bg: #faf8f6;
   --color-bg-alt: #F9FAFB;
