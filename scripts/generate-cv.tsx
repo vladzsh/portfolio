@@ -148,7 +148,7 @@ function CV() {
         <Header />
         <View style={{ marginTop: 8 }}>
           <Text style={s.summary}>
-            Full-stack developer with 4+ years of experience building web applications
+            Full-stack developer with 5 years of experience building web applications
             in the education and e-commerce sectors. Specializing in Python, Django, React,
             Open edX, and cloud infrastructure (Kubernetes, AWS, CI/CD). Passionate about
             automation, edtech, and AI-powered tooling. Currently based in Turkey.

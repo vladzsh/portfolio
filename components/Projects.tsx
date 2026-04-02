@@ -18,11 +18,30 @@ export default function Projects() {
         <ScrollReveal stagger>
           <div className="border-t border-[var(--color-border)]">
             {projects.map((project, i) => {
-              const content = (
+              const linkLabel = project.url
+                ? project.url === "NDA"
+                  ? "NDA"
+                  : (() => {
+                      try {
+                        return new URL(project.url).hostname.replace(/^www\./, "");
+                      } catch {
+                        return null;
+                      }
+                    })()
+                : null;
+
+              const body = (
                 <div className="project-info">
-                  <h3 className="text-lg font-semibold text-[var(--color-text-primary)] inline">
-                    {project.name}
-                  </h3>
+                  <div className="flex items-baseline justify-between gap-4 max-md:flex-col max-md:gap-1">
+                    <h3 className="text-lg font-semibold text-[var(--color-text-primary)] inline">
+                      {project.name}
+                    </h3>
+                    {linkLabel && (
+                      <span className="text-sm text-[var(--color-text-muted)] whitespace-nowrap">
+                        {linkLabel}
+                      </span>
+                    )}
+                  </div>
                   <p className="text-base text-[var(--color-text-secondary)] text-justify">
                     {project.description}
                   </p>
@@ -37,11 +56,11 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   className={itemCls}
                 >
-                  {content}
+                  {body}
                 </a>
               ) : (
                 <div key={project.name} className={`${itemCls} project-item--no-link`}>
-                  {content}
+                  {body}
                 </div>
               );
             })}

@@ -13,7 +13,7 @@ export default function Hero() {
           <TypedText text="Full Stack Web Developer" />
 
           <div className="hero-facts text-lg text-[var(--color-text-muted)] leading-loose mb-7">
-            4+ years building web applications
+          5 years building web applications
             <br />
             Python, Odoo, React, k8s, CI/CD &amp; DevOps, AI Agents
           </div>
