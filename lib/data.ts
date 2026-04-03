@@ -3,13 +3,13 @@ export const projects = [
     name: "MON USO — National Education Platform",
     description:
       "Large - scale Ukrainian online education ecosystem for public schools, serving the Ministry of Education.Built on Open edX with multiple custom services and multi - environment architecture.I worked as a full - stack developer — building backend APIs, customizing the LMS, and maintaining deployment pipelines.",
-    url: "https://lms.e-school.net.ua/",
+    url: "NDA",
   },
   {
     name: "Starbucks Global Academy",
     description:
       "Customized corporate learning platform with regional microsites, advanced branding, mobile apps, gamification, analytics, and bespoke UX.I contributed to backend development and platform customization across multiple regional deployments.",
-    url: "https://learning.getyouredge.org/",
+    url: "https://starbucksglobalacademy.com/",
   },
   {
     name: "AI Lab — AI Powered Tooling & Integrations",
@@ -27,10 +27,10 @@ export const projects = [
     name: "Community Housing Transformation Centre",
     description:
       "Learning platform for Canada's community housing sector.Built on Open edX with custom portal features, multilingual support(EN / FR), mobile apps, and analytics integrations for content delivery and social learning.",
-    url: "https://chaalc.ca/en/",
+    url: "https://chaalc.ca/",
   },
   {
-    name: "MON - Textbook Approval System",
+    name: "Textbook Approval System",
     description:
       "A specialized module for managing expert review and approval of school textbooks within the national education platform.Integrates the LMS with an Odoo - based workflow for administrators, publishers, and expert reviewers — covering user provisioning, textbook - course creation, expert group assignment, and status tracking.",
     url: "NDA",
