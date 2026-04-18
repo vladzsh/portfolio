@@ -23,7 +23,7 @@ export default function Experience() {
               >
                 <div
                   className={`absolute -left-[35px] top-1 w-3 h-3 rounded-full shadow-[0_0_0_4px_var(--color-bg)] ${
-                    i === 0
+                    item.date.includes("Present")
                       ? "bg-[var(--color-dark)]"
                       : "bg-[var(--color-border)]"
                   }`}

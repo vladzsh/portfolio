@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SizinMoto — İstanbul'un Motor Tutkusu | Motosiklet, Yedek Parça, Aksesuar</title>
+<meta name="description" content="SizinMoto — Ataşehir İçerenköy'de motosiklet, scooter, yedek parça ve aksesuar. 125cc'den tam güç makinelere. MOTOLUX yetkili satış noktası." />
+<meta property="og:title" content="SizinMoto — İstanbul'un Motor Tutkusu" />
+<meta property="og:description" content="Motosiklet, scooter, yedek parça ve aksesuar. Ataşehir İçerenköy." />
+<meta property="og:type" content="website" />
+<link rel="icon" type="image/svg+xml" href="/projects/moto/favicon.svg" />
+<link rel="apple-touch-icon" href="/projects/moto/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: { 950: '#070707', 900: '#0c0c0d', 800: '#141416', 700: '#1c1c1f', 600: '#26262b' },
+          fire: { 400: '#ff5a3c', 500: '#ef3a24', 600: '#d82c18', 700: '#a91f10' },
+          steel: { 200: '#d9dce1', 300: '#b3b7be', 400: '#8a8f98', 500: '#5d6169' },
+        },
+        fontFamily: {
+          sans: ['Inter', 'system-ui', 'sans-serif'],
+          display: ['"Bebas Neue"', 'Impact', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body { background: #070707; color: #f5f5f7; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  .font-display { font-family: 'Bebas Neue', Impact, sans-serif; letter-spacing: 0.02em; }
+  .hero-bg {
+    background:
+      radial-gradient(1200px 600px at 75% 20%, rgba(239,58,36,0.18), transparent 60%),
+      radial-gradient(900px 500px at 15% 80%, rgba(255,90,60,0.08), transparent 60%),
+      linear-gradient(180deg, #070707 0%, #0a0a0b 60%, #0c0c0d 100%);
+  }
+  .grain::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .06;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    mix-blend-mode: overlay;
+  }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .marquee-track { animation: marquee 30s linear infinite; }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  .bike-card { transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s; }
+  .bike-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -20px rgba(239,58,36,0.25); }
+  .bike-card img { transition: transform .7s ease; }
+  .bike-card:hover img { transform: scale(1.08); }
+  .btn-fire { background: linear-gradient(135deg, #ef3a24 0%, #d82c18 100%); box-shadow: 0 10px 30px -10px rgba(239,58,36,0.6); }
+  .btn-fire:hover { filter: brightness(1.08); box-shadow: 0 15px 40px -10px rgba(239,58,36,0.8); }
+  .btn-ghost { border: 1px solid rgba(255,255,255,0.15); }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.03); }
+  .lines {
+    background-image:
+      linear-gradient(135deg, rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(45deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .stripe { background: repeating-linear-gradient(90deg, #ef3a24 0 20px, transparent 20px 40px); height: 4px; }
+  .nav-scrolled { backdrop-filter: blur(18px); background: rgba(7,7,7,0.78); border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .pill.active { background: #ef3a24; color: white; border-color: transparent; }
+  .mapgrid {
+    background:
+      linear-gradient(rgba(239,58,36,0.08) 1px, transparent 1px) 0 0/40px 40px,
+      linear-gradient(90deg, rgba(239,58,36,0.08) 1px, transparent 1px) 0 0/40px 40px,
+      radial-gradient(circle at 60% 50%, rgba(239,58,36,0.25), transparent 60%),
+      #0c0c0d;
+  }
+</style>
+</head>
+<body class="bg-ink-950 text-white">
+
+<header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-16 md:h-20">
+    <a href="#top" class="flex items-center gap-2 group">
+      <span class="inline-block w-9 h-9 rounded-lg bg-fire-500 grid place-items-center shadow-lg shadow-fire-500/30 group-hover:rotate-[-6deg] transition-transform">
+        <img src="/projects/moto/logo.svg" alt="" class="w-5 h-5" width="20" height="20" />
+      </span>
+      <span class="font-display text-2xl tracking-wider">SIZIN<span class="text-fire-500">MOTO</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-steel-300">
+      <a href="#motosikletler" class="hover:text-white transition">Motosikletler</a>
+      <a href="#hizmetler" class="hover:text-white transition">Hizmetler</a>
+      <a href="#hakkimizda" class="hover:text-white transition">Hakkımızda</a>
+      <a href="#magazalar" class="hover:text-white transition">Mağazalarımız</a>
+      <a href="#iletisim" class="hover:text-white transition">İletişim</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="tel:+905305616304" class="hidden sm:flex items-center gap-2 text-sm text-steel-200 hover:text-white transition">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.105a1.125 1.125 0 0 0-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97a1.125 1.125 0 0 0 .417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
+        530 561 63 04
+      </a>
+      <a href="https://wa.me/905305616304" target="_blank" rel="noopener" class="btn-fire inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold text-white transition">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.88 11.88 0 0 0 12 0C5.37 0 .03 5.37.03 12c0 2.11.55 4.18 1.6 6L0 24l6.18-1.62a11.9 11.9 0 0 0 5.82 1.48h.01C18.63 23.86 24 18.5 24 11.87a11.86 11.86 0 0 0-3.48-8.39ZM12 21.78h-.01a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.67.96.98-3.57-.23-.37A9.88 9.88 0 0 1 2.12 12C2.12 6.53 6.54 2.1 12 2.1c2.64 0 5.12 1.03 6.98 2.9A9.82 9.82 0 0 1 21.9 12c0 5.47-4.43 9.78-9.9 9.78Zm5.43-7.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.67-2.06-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.21 5.1 4.5.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+  <div class="stripe"></div>
+</header>
+
+<section id="top" class="hero-bg relative grain overflow-hidden pt-20">
+  <!-- DEMO BANNER — замінити YOUR_NUMBER на особистий WhatsApp -->
+  <div class="bg-fire-500/10 border-y border-fire-500/30 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-3 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center text-sm">
+      <span class="inline-flex items-center gap-2 text-fire-400 font-semibold whitespace-nowrap">
+        <span class="w-1.5 h-1.5 rounded-full bg-fire-500 animate-pulse"></span>
+        DEMO
+      </span>
+      <span class="text-steel-200">
+        Bu site sadece demonstrasyon (gösterim) versiyonudur. Benzer bir siteyi kendiniz için yaptırmak isterseniz,
+        <a href="https://wa.me/YOUR_NUMBER" target="_blank" rel="noopener" class="text-fire-400 hover:text-fire-300 underline font-semibold">geliştiriciyle iletişime geçin</a>.
+      </span>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 pt-16 md:pt-24 pb-20 md:pb-32 grid md:grid-cols-12 gap-10 items-center relative">
+    <div class="md:col-span-7 reveal">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-steel-200 mb-6">
+        <span class="w-1.5 h-1.5 rounded-full bg-fire-500 animate-pulse"></span>
+        MOTOLUX Yetkili Satış Noktası · Ataşehir / İstanbul
+      </div>
+      <h1 class="font-display text-6xl sm:text-7xl md:text-8xl leading-[0.9]">
+        YETKİLİ BAYİ.<br/>
+        GERÇEK <span class="text-fire-500">FİYAT.</span>
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-steel-300 max-w-xl">
+        Sıfır ve ikinci el motosiklet alım-satım, servis ve aksesuar.
+        MOTOLUX resmi satış noktası — <span class="text-white">İçerenköy, Ataşehir.</span>
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <a href="#motosikletler" class="btn-fire inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold text-white transition">
+          Motosikletleri Keşfet
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+        </a>
+        <a href="#iletisim" class="btn-ghost inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold text-white transition">
+          Showroom'u Ziyaret Et
+        </a>
+      </div>
+      <div class="mt-10 grid grid-cols-3 gap-6 max-w-lg">
+        <div><div class="font-display text-4xl text-white">4.8<span class="text-fire-500">★</span></div><div class="text-xs text-steel-400 mt-1 uppercase tracking-wider">Müşteri Puanı</div></div>
+        <div><div class="font-display text-4xl text-white">2</div><div class="text-xs text-steel-400 mt-1 uppercase tracking-wider">Ataşehir Mağazası</div></div>
+        <div><div class="font-display text-4xl text-white">500+</div><div class="text-xs text-steel-400 mt-1 uppercase tracking-wider">Ürün Çeşidi</div></div>
+      </div>
+    </div>
+    <div class="md:col-span-5 relative reveal">
+      <div class="absolute -inset-10 bg-fire-500/10 blur-3xl rounded-full"></div>
+      <div class="relative aspect-square rounded-3xl overflow-hidden border border-white/10 bg-ink-800">
+        <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=80" alt="Motosiklet" class="w-full h-full object-cover opacity-90" loading="eager" />
+        <div class="absolute inset-0 bg-gradient-to-tr from-ink-950 via-transparent to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between">
+          <div><div class="text-xs text-steel-300 uppercase tracking-[0.2em]">Haftanın Öne Çıkanı</div><div class="font-display text-3xl mt-1">YENİ SEZON 125cc</div></div>
+          <div class="px-3 py-1.5 rounded-full bg-fire-500 text-white text-xs font-semibold">YENİ</div>
+        </div>
+      </div>
+      <div class="hidden sm:flex absolute -left-6 bottom-6 bg-ink-800/90 backdrop-blur rounded-2xl border border-white/10 p-4 gap-3 items-center shadow-2xl">
+        <div class="w-10 h-10 rounded-full bg-fire-500/20 grid place-items-center">
+          <svg class="w-5 h-5 text-fire-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+        </div>
+        <div><div class="text-sm font-semibold">Geniş model yelpazesi</div><div class="text-xs text-steel-400">Her sürücüye uygun model</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="border-y border-white/5 bg-ink-900/60 py-4 overflow-hidden w-full max-w-[100vw]">
+    <div class="marquee-track flex gap-12 whitespace-nowrap font-display text-3xl text-steel-500">
+      <span>MOTOSİKLET</span><span class="text-fire-500">✦</span>
+      <span>SCOOTER</span><span class="text-fire-500">✦</span>
+      <span>YEDEK PARÇA</span><span class="text-fire-500">✦</span>
+      <span>AKSESUAR</span><span class="text-fire-500">✦</span>
+      <span>GİYİM</span><span class="text-fire-500">✦</span>
+      <span>SERVİS</span><span class="text-fire-500">✦</span>
+      <span>MOTOSİKLET</span><span class="text-fire-500">✦</span>
+      <span>SCOOTER</span><span class="text-fire-500">✦</span>
+      <span>YEDEK PARÇA</span><span class="text-fire-500">✦</span>
+      <span>AKSESUAR</span><span class="text-fire-500">✦</span>
+      <span>GİYİM</span><span class="text-fire-500">✦</span>
+      <span>SERVİS</span><span class="text-fire-500">✦</span>
+    </div>
+  </div>
+</section>
+
+<section id="motosikletler" class="relative py-20 md:py-28 lines">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 reveal">
+      <div>
+        <div class="text-fire-500 text-sm uppercase tracking-[0.25em] font-semibold mb-3">Katalog</div>
+        <h2 class="font-display text-5xl md:text-6xl leading-none">ÖNE ÇIKAN MOTOSİKLETLER</h2>
+        <p class="mt-4 text-steel-400 max-w-xl">Şehir için chic scooter'lardan macera seven sürücülere kadar — her bütçe ve stile uygun seçenekler.</p>
+      </div>
+      <div class="flex flex-wrap gap-2" id="filters">
+        <button class="pill active px-4 py-2 rounded-full border border-white/10 text-sm font-medium text-white transition" data-filter="all">Tümü</button>
+        <button class="pill px-4 py-2 rounded-full border border-white/10 text-sm font-medium text-steel-300 hover:text-white transition" data-filter="125">125cc</button>
+        <button class="pill px-4 py-2 rounded-full border border-white/10 text-sm font-medium text-steel-300 hover:text-white transition" data-filter="scooter">Scooter</button>
+        <button class="pill px-4 py-2 rounded-full border border-white/10 text-sm font-medium text-steel-300 hover:text-white transition" data-filter="sport">Sport</button>
+        <button class="pill px-4 py-2 rounded-full border border-white/10 text-sm font-medium text-steel-300 hover:text-white transition" data-filter="adventure">Adventure</button>
+      </div>
+    </div>
+    <div id="bikes" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    <div class="mt-12 text-center reveal">
+      <a href="#iletisim" class="btn-ghost inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold text-white transition">
+        Tüm Kataloğu Gör
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="hizmetler" class="py-20 md:py-28 bg-ink-900 relative overflow-hidden">
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-fire-500/5 rounded-full blur-3xl"></div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 relative">
+    <div class="max-w-2xl reveal">
+      <div class="text-fire-500 text-sm uppercase tracking-[0.25em] font-semibold mb-3">Ne Yapıyoruz</div>
+      <h2 class="font-display text-5xl md:text-6xl leading-none">MOTORLA İLGİLİ <span class="text-fire-500">HER ŞEY</span></h2>
+      <p class="mt-4 text-steel-400">Satıştan servise, yedek parçadan aksesuara. Tek adreste.</p>
+    </div>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="group rounded-2xl p-6 bg-ink-800/80 border border-white/5 hover:border-fire-500/40 transition reveal">
+        <div class="w-12 h-12 rounded-xl bg-fire-500/10 text-fire-500 grid place-items-center mb-5 group-hover:bg-fire-500 group-hover:text-white transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12 5 7h14l2.75 5M2.25 12h19.5M2.25 12v6a.75.75 0 0 0 .75.75h1.5a.75.75 0 0 0 .75-.75v-1.5h13.5V18c0 .414.336.75.75.75h1.5a.75.75 0 0 0 .75-.75v-6"/></svg>
+        </div>
+        <h3 class="font-display text-2xl">MOTOSİKLET SATIŞI</h3>
+        <p class="mt-2 text-steel-400 text-sm">Sıfır ve 2. el motosiklet, scooter. 125cc'den yüksek hacimlilere kadar geniş stok.</p>
+      </div>
+      <div class="group rounded-2xl p-6 bg-ink-800/80 border border-white/5 hover:border-fire-500/40 transition reveal">
+        <div class="w-12 h-12 rounded-xl bg-fire-500/10 text-fire-500 grid place-items-center mb-5 group-hover:bg-fire-500 group-hover:text-white transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z"/></svg>
+        </div>
+        <h3 class="font-display text-2xl">USTA SERVİS</h3>
+        <p class="mt-2 text-steel-400 text-sm">Tecrübeli ustamızla bakım, onarım ve tuning. Uygun fiyata gerçek çözüm.</p>
+      </div>
+      <div class="group rounded-2xl p-6 bg-ink-800/80 border border-white/5 hover:border-fire-500/40 transition reveal">
+        <div class="w-12 h-12 rounded-xl bg-fire-500/10 text-fire-500 grid place-items-center mb-5 group-hover:bg-fire-500 group-hover:text-white transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
+        </div>
+        <h3 class="font-display text-2xl">YEDEK PARÇA</h3>
+        <p class="mt-2 text-steel-400 text-sm">Orijinal ve aftermarket yedek parçalar. Ataşehir'de 2. mağazamız sadece bunun için.</p>
+      </div>
+      <div class="group rounded-2xl p-6 bg-ink-800/80 border border-white/5 hover:border-fire-500/40 transition reveal">
+        <div class="w-12 h-12 rounded-xl bg-fire-500/10 text-fire-500 grid place-items-center mb-5 group-hover:bg-fire-500 group-hover:text-white transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg>
+        </div>
+        <h3 class="font-display text-2xl">GİYİM & AKSESUAR</h3>
+        <p class="mt-2 text-steel-400 text-sm">Kask, eldiven, ceket, bot. Sürücünün ihtiyacı olan her şey aynı çatı altında.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hakkimizda" class="py-20 md:py-28 relative">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid md:grid-cols-2 gap-12 items-center">
+    <div class="relative reveal">
+      <div class="absolute -inset-6 bg-gradient-to-br from-fire-500/30 to-transparent blur-2xl"></div>
+      <div class="relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/10">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1000&q=80" alt="Motosiklet servis" class="w-full h-full object-cover" loading="lazy" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink-950 via-transparent to-transparent"></div>
+        <div class="absolute bottom-6 left-6 right-6">
+          <div class="text-xs uppercase tracking-[0.25em] text-steel-300">Showroom</div>
+          <div class="font-display text-3xl mt-1">Ataşehir İçerenköy</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="text-fire-500 text-sm uppercase tracking-[0.25em] font-semibold mb-3">Hakkımızda</div>
+      <h2 class="font-display text-5xl md:text-6xl leading-none">İYİ MOTOR. İYİ İNSAN. <span class="text-fire-500">İYİ FİYAT.</span></h2>
+      <p class="mt-6 text-steel-300 text-lg">Biz SIZINMOTO'ız. Ataşehir'de iki mağaza, bir hedef: motor sevdalılarına dürüstçe, uygun fiyata, samimi ilgiyle hizmet vermek.</p>
+      <ul class="mt-8 space-y-4">
+        <li class="flex gap-4">
+          <div class="w-10 h-10 shrink-0 rounded-full bg-fire-500/10 text-fire-500 grid place-items-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+          <div><div class="font-semibold">MOTOLUX yetkili satış noktası</div><div class="text-steel-400 text-sm">Resmi garanti, orijinal ürün, güvenli alışveriş.</div></div>
+        </li>
+        <li class="flex gap-4">
+          <div class="w-10 h-10 shrink-0 rounded-full bg-fire-500/10 text-fire-500 grid place-items-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+          <div><div class="font-semibold">Hepsiburada ve Sahibinden</div><div class="text-steel-400 text-sm">Türkiye'nin en büyük pazaryerlerinde aktif satıcıyız.</div></div>
+        </li>
+        <li class="flex gap-4">
+          <div class="w-10 h-10 shrink-0 rounded-full bg-fire-500/10 text-fire-500 grid place-items-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+          <div><div class="font-semibold">4.8 / 5 müşteri puanı</div><div class="text-steel-400 text-sm">"Artık tek adresim SIZINMOTO!" — gerçek müşterilerimizden.</div></div>
+        </li>
+        <li class="flex gap-4">
+          <div class="w-10 h-10 shrink-0 rounded-full bg-fire-500/10 text-fire-500 grid place-items-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+          <div><div class="font-semibold">Satış + Servis + Parça tek çatı</div><div class="text-steel-400 text-sm">Bir kez bizden aldınız mı, hep yanınızdayız.</div></div>
+        </li>
+      </ul>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="#iletisim" class="btn-fire inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold">Bize Yol Tarifi Alın</a>
+        <a href="#" target="_blank" rel="noopener" class="btn-ghost inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold">Instagram'da Takip Et</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 md:py-28 bg-ink-900 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="max-w-2xl reveal">
+      <div class="text-fire-500 text-sm uppercase tracking-[0.25em] font-semibold mb-3">Müşteri Yorumları</div>
+      <h2 class="font-display text-5xl md:text-6xl leading-none">SÖZLERİ BİZ DEĞİL, <span class="text-fire-500">SÜRÜCÜLER</span> SÖYLÜYOR</h2>
+    </div>
+    <div class="mt-12 grid md:grid-cols-3 gap-6">
+      <figure class="bg-ink-800/80 border border-white/5 rounded-2xl p-6 reveal">
+        <div class="flex items-center gap-1 text-fire-500 mb-4"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote class="text-steel-200 leading-relaxed">"4-5 servis gezip yüksek miktarda para harcadım fakat sorunum çözülmedi. SIZINMOTO'a geldim. İlgi ve detaylı dinlemeleri beni çok mutlu etti. Sorunum uygun fiyatla tamamen çözüldü. Artık tek adresim SIZINMOTO!"</blockquote>
+        <figcaption class="mt-5 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-fire-500 to-fire-700 grid place-items-center font-semibold">G</div>
+          <div><div class="font-semibold text-sm">Gözde Korkut</div><div class="text-xs text-steel-400">Yandex Maps · Eylül 2025</div></div>
+        </figcaption>
+      </figure>
+      <figure class="bg-ink-800/80 border border-white/5 rounded-2xl p-6 reveal">
+        <div class="flex items-center gap-1 text-fire-500 mb-4"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote class="text-steel-200 leading-relaxed">"Motosikletle ilgili her şey. Mağazada sıfır motordan yedek parçaya, aksesuardan giyime kadar aradığım her şey vardı. Ela Hanım ve ekibi gerçekten işini seviyor."</blockquote>
+        <figcaption class="mt-5 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-fire-500 to-fire-700 grid place-items-center font-semibold">Y</div>
+          <div><div class="font-semibold text-sm">Yeliz Deniz</div><div class="text-xs text-steel-400">Yandex Maps · Nisan 2025</div></div>
+        </figcaption>
+      </figure>
+      <figure class="bg-ink-800/80 border border-white/5 rounded-2xl p-6 reveal">
+        <div class="flex items-center gap-1 text-fire-500 mb-4"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote class="text-steel-200 leading-relaxed">"Çok esnaf. Dürüst, samimi, işini bilen insanlar. İstanbul'da bu kalitede motor dükkanı bulmak kolay değil."</blockquote>
+        <figcaption class="mt-5 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-fire-500 to-fire-700 grid place-items-center font-semibold">T</div>
+          <div><div class="font-semibold text-sm">Taşkın Yılmaz</div><div class="text-xs text-steel-400">Yandex Maps · Ocak 2026</div></div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="magazalar" class="py-20 md:py-28 relative">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <div class="text-fire-500 text-sm uppercase tracking-[0.25em] font-semibold mb-3">Çevrimiçi Mağazalar</div>
+      <h2 class="font-display text-5xl md:text-6xl leading-none">TÜRKİYE'NİN HER YERİNE <span class="text-fire-500">GÖNDERİM</span></h2>
+      <p class="mt-4 text-steel-400">Tercih ettiğiniz pazaryerinden SizinMoto kalitesine ulaşın.</p>
+    </div>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <a href="https://www.hepsiburada.com/" target="_blank" rel="noopener" class="group rounded-2xl p-6 border border-white/10 bg-ink-800/60 hover:bg-ink-800 hover:border-fire-500/40 transition reveal">
+        <div class="text-2xl font-display tracking-wide">Hepsiburada</div>
+        <div class="text-steel-400 text-sm mt-1">Resmi SizinMoto mağazası</div>
+        <div class="mt-4 text-fire-500 text-sm flex items-center gap-2 opacity-0 group-hover:opacity-100 transition">Mağazaya git →</div>
+      </a>
+      <a href="https://sahibinden.com/" target="_blank" rel="noopener" class="group rounded-2xl p-6 border border-white/10 bg-ink-800/60 hover:bg-ink-800 hover:border-fire-500/40 transition reveal">
+        <div class="text-2xl font-display tracking-wide">Sahibinden</div>
+        <div class="text-steel-400 text-sm mt-1">Sıfır ve 2. el motosiklet</div>
+        <div class="mt-4 text-fire-500 text-sm flex items-center gap-2 opacity-0 group-hover:opacity-100 transition">Mağazaya git →</div>
+      </a>
+      <a href="https://www.pttavm.com/" target="_blank" rel="noopener" class="group rounded-2xl p-6 border border-white/10 bg-ink-800/60 hover:bg-ink-800 hover:border-fire-500/40 transition reveal">
+        <div class="text-2xl font-display tracking-wide">PttAVM</div>
+        <div class="text-steel-400 text-sm mt-1">Güvenilir alışveriş</div>
+        <div class="mt-4 text-fire-500 text-sm flex items-center gap-2 opacity-0 group-hover:opacity-100 transition">Mağazaya git →</div>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="group rounded-2xl p-6 border border-white/10 bg-ink-800/60 hover:bg-ink-800 hover:border-fire-500/40 transition reveal">
+        <div class="text-2xl font-display tracking-wide">@sizinmoto</div>
+        <div class="text-steel-400 text-sm mt-1">Güncel ürünler & hikayeler</div>
+        <div class="mt-4 text-fire-500 text-sm flex items-center gap-2 opacity-0 group-hover:opacity-100 transition">Instagram'a git →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="relative py-20 md:py-24 overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-r from-fire-700 via-fire-500 to-fire-600"></div>
+  <div class="absolute inset-0 grain"></div>
+  <div class="relative max-w-7xl mx-auto px-5 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
+    <div class="reveal">
+      <div class="text-white/80 text-sm uppercase tracking-[0.3em] font-semibold">Teklif Al</div>
+      <h3 class="font-display text-4xl md:text-5xl mt-2 leading-none text-white">ARADIĞINIZ MOTOSİKLETİ <br class="hidden md:block"/>BİZİMLE BULUN.</h3>
+    </div>
+    <div class="flex flex-wrap gap-3 reveal">
+      <a href="https://wa.me/905305616304" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white text-ink-950 font-semibold hover:bg-ink-950 hover:text-white transition">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.88 11.88 0 0 0 12 0C5.37 0 .03 5.37.03 12c0 2.11.55 4.18 1.6 6L0 24l6.18-1.62a11.9 11.9 0 0 0 5.82 1.48h.01C18.63 23.86 24 18.5 24 11.87a11.86 11.86 0 0 0-3.48-8.39Z"/></svg>
+        WhatsApp ile Yaz
+      </a>
+      <a href="tel:+905305616304" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-white/40 text-white font-semibold hover:bg-white hover:text-ink-950 transition">530 561 63 04</a>
+    </div>
+  </div>
+</section>
+
+<section id="iletisim" class="py-20 md:py-28 relative">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-10">
+    <div class="reveal">
+      <div class="text-fire-500 text-sm uppercase tracking-[0.25em] font-semibold mb-3">İletişim</div>
+      <h2 class="font-display text-5xl md:text-6xl leading-none">BİZİ ATAŞEHİR'DE <span class="text-fire-500">ZİYARET EDİN</span></h2>
+      <p class="mt-4 text-steel-400 max-w-xl">Küçükbakkalköy metrosuna 5 dakika yürüyüş mesafesinde. Gelir, motorları yakından görür, sürücünün fikrini de alırsınız.</p>
+      <div class="mt-8 space-y-5">
+        <div class="flex gap-4">
+          <div class="w-11 h-11 rounded-xl bg-fire-500/10 text-fire-500 grid place-items-center shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg></div>
+          <div><div class="text-xs uppercase tracking-wider text-steel-400">Ana Mağaza — Satış</div><div class="font-semibold text-lg">İçerenköy Mah., Karslı Ahmet Cad., 63A</div><div class="text-steel-300">Ataşehir, İstanbul</div></div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-11 h-11 rounded-xl bg-fire-500/10 text-fire-500 grid place-items-center shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg></div>
+          <div><div class="text-xs uppercase tracking-wider text-steel-400">Yedek Parça & Aksesuar</div><div class="font-semibold text-lg">SizinMoto Yedek Parça</div><div class="text-steel-300">Ataşehir, İstanbul</div></div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-11 h-11 rounded-xl bg-fire-500/10 text-fire-500 grid place-items-center shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.105a1.125 1.125 0 0 0-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97a1.125 1.125 0 0 0 .417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg></div>
+          <div><div class="text-xs uppercase tracking-wider text-steel-400">Telefon</div><a href="tel:+905305616304" class="font-semibold text-lg hover:text-fire-500 transition">+90 530 561 63 04</a></div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-11 h-11 rounded-xl bg-fire-500/10 text-fire-500 grid place-items-center shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg></div>
+          <div><div class="text-xs uppercase tracking-wider text-steel-400">Çalışma Saatleri</div><div class="font-semibold">Pzt – Cmt · 09:00 – 19:00</div><div class="text-steel-400 text-sm">Pazar kapalı</div></div>
+        </div>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="https://wa.me/905305616304" target="_blank" rel="noopener" class="btn-fire inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold text-white">WhatsApp ile Yaz</a>
+        <a href="https://yandex.com.tr/maps/" target="_blank" rel="noopener" class="btn-ghost inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold text-white">Haritada Aç</a>
+      </div>
+    </div>
+    <div class="relative reveal">
+      <div class="aspect-[4/5] lg:aspect-auto lg:h-full min-h-[520px] rounded-3xl overflow-hidden border border-white/10 mapgrid relative">
+        <svg class="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 400 500" preserveAspectRatio="none">
+          <path d="M0,120 L400,80" stroke="rgba(255,255,255,0.25)" stroke-width="1" fill="none"/>
+          <path d="M0,220 L400,260" stroke="rgba(255,255,255,0.25)" stroke-width="1" fill="none"/>
+          <path d="M0,380 L400,340" stroke="rgba(255,255,255,0.25)" stroke-width="1" fill="none"/>
+          <path d="M120,0 L80,500" stroke="rgba(255,255,255,0.25)" stroke-width="1" fill="none"/>
+          <path d="M260,0 L300,500" stroke="rgba(255,255,255,0.25)" stroke-width="1" fill="none"/>
+        </svg>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+          <div class="relative">
+            <div class="absolute inset-0 animate-ping rounded-full bg-fire-500/40"></div>
+            <div class="relative w-14 h-14 rounded-full bg-fire-500 text-white grid place-items-center shadow-2xl shadow-fire-500/40">
+              <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+            </div>
+          </div>
+          <div class="mt-3 px-4 py-2 rounded-xl bg-ink-900/90 backdrop-blur border border-white/10 text-center">
+            <div class="font-display text-lg">SIZINMOTO</div>
+            <div class="text-xs text-steel-400">İçerenköy, Ataşehir</div>
+          </div>
+        </div>
+        <div class="absolute top-6 left-6 text-xs text-steel-400 uppercase tracking-wider">Küçükbakkalköy M. 560m</div>
+        <div class="absolute bottom-6 right-6 text-xs text-steel-400 uppercase tracking-wider">İçerenköy Mah.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="border-t border-white/5 bg-ink-950">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid md:grid-cols-4 gap-10">
+    <div class="md:col-span-2">
+      <a href="#top" class="flex items-center gap-2 group">
+        <span class="inline-block w-9 h-9 rounded-lg bg-fire-500 grid place-items-center">
+          <img src="/projects/moto/logo.svg" alt="" class="w-5 h-5" width="20" height="20" />
+        </span>
+        <span class="font-display text-2xl tracking-wider">SIZIN<span class="text-fire-500">MOTO</span></span>
+      </a>
+      <p class="mt-4 text-steel-400 max-w-md">İstanbul Ataşehir'de motosiklet, scooter, yedek parça ve aksesuar. Motorla ilgili her şey, tek adreste.</p>
+      <div class="mt-5 flex gap-3">
+        <a aria-label="Instagram" href="https://www.instagram.com/vladyslavzsh/" target="_blank" rel="noopener" class="w-10 h-10 rounded-full border border-white/10 grid place-items-center hover:bg-fire-500 hover:border-transparent transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.335 3.608 1.31.975.975 1.248 2.242 1.31 3.608.058 1.266.069 1.646.069 4.849 0 3.205-.012 3.584-.069 4.849-.062 1.366-.335 2.633-1.31 3.608-.975.975-2.242 1.248-3.608 1.31-1.266.058-1.645.07-4.85.07-3.204 0-3.584-.012-4.849-.07-1.366-.062-2.633-.335-3.608-1.31-.975-.975-1.248-2.242-1.31-3.608C2.175 15.647 2.163 15.268 2.163 12c0-3.204.012-3.584.07-4.85.062-1.366.335-2.633 1.31-3.608.975-.975 2.242-1.248 3.608-1.31C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.141 0-3.513.012-4.757.068-.914.042-1.413.194-1.746.322a2.91 2.91 0 0 0-1.055.684 2.91 2.91 0 0 0-.684 1.055c-.128.333-.28.832-.322 1.746-.056 1.244-.068 1.616-.068 4.757s.012 3.513.068 4.757c.042.914.194 1.413.322 1.746.163.42.36.72.684 1.055.335.324.635.521 1.055.684.333.128.832.28 1.746.322 1.243.056 1.615.068 4.757.068s3.513-.012 4.757-.068c.914-.042 1.413-.194 1.746-.322.42-.163.72-.36 1.055-.684.324-.335.521-.635.684-1.055.128-.333.28-.832.322-1.746.056-1.244.068-1.616.068-4.757s-.012-3.513-.068-4.757c-.042-.914-.194-1.413-.322-1.746a2.91 2.91 0 0 0-.684-1.055 2.91 2.91 0 0 0-1.055-.684c-.333-.128-.832-.28-1.746-.322-1.244-.056-1.616-.068-4.757-.068zM12 6.865a5.135 5.135 0 1 0 0 10.27 5.135 5.135 0 0 0 0-10.27zm0 8.468a3.333 3.333 0 1 1 0-6.666 3.333 3.333 0 0 1 0 6.666zm5.338-8.67a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4z"/></svg>
+        </a>
+        <a aria-label="Facebook" href="#" target="_blank" rel="noopener" class="w-10 h-10 rounded-full border border-white/10 grid place-items-center hover:bg-fire-500 hover:border-transparent transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"/></svg>
+        </a>
+        <a aria-label="WhatsApp" href="https://wa.me/905305616304" target="_blank" rel="noopener" class="w-10 h-10 rounded-full border border-white/10 grid place-items-center hover:bg-fire-500 hover:border-transparent transition">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.88 11.88 0 0 0 12 0C5.37 0 .03 5.37.03 12c0 2.11.55 4.18 1.6 6L0 24l6.18-1.62a11.9 11.9 0 0 0 5.82 1.48h.01C18.63 23.86 24 18.5 24 11.87a11.86 11.86 0 0 0-3.48-8.39Z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="font-display text-lg mb-4 tracking-wide">KEŞFET</div>
+      <ul class="space-y-2 text-sm text-steel-400">
+        <li><a href="#motosikletler" class="hover:text-white transition">Motosikletler</a></li>
+        <li><a href="#hizmetler" class="hover:text-white transition">Hizmetler</a></li>
+        <li><a href="#hakkimizda" class="hover:text-white transition">Hakkımızda</a></li>
+        <li><a href="#magazalar" class="hover:text-white transition">Çevrimiçi Mağazalar</a></li>
+        <li><a href="#iletisim" class="hover:text-white transition">İletişim</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="font-display text-lg mb-4 tracking-wide">İLETİŞİM</div>
+      <ul class="space-y-2 text-sm text-steel-400">
+        <li>İçerenköy Mah.</li>
+        <li>Karslı Ahmet Cad. 63A</li>
+        <li>Ataşehir / İstanbul</li>
+        <li class="pt-2"><a href="tel:+905305616304" class="text-white hover:text-fire-500 transition">+90 530 561 63 04</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-steel-500">
+      <div>© 2026 SizinMoto. Tüm hakları saklıdır.</div>
+      <div>Yapım aşamasında — yeni web sitemiz yakında.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const bikes = [
+    { name: 'Urban 125', cat: '125', spec: '125cc · 11 HP · B ehliyet', tag: 'Yeni', img: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=900&q=80' },
+    { name: 'City Scooter 150', cat: 'scooter', spec: '150cc · ABS · Şehir', tag: 'Popüler', img: 'https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=900&q=80' },
+    { name: 'Sport 250 R', cat: 'sport', spec: '250cc · 27 HP · Spor', tag: 'Hızlı', img: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=80' },
+    { name: 'Adventure 400', cat: 'adventure', spec: '400cc · Off-road · Macera', tag: 'Yeni', img: 'https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?auto=format&fit=crop&w=900&q=80' },
+    { name: 'Classic 125', cat: '125', spec: '125cc · Retro tasarım', tag: '', img: 'https://images.unsplash.com/photo-1580310614729-ccd69652491d?auto=format&fit=crop&w=900&q=80' },
+    { name: 'Scooter Max 125', cat: 'scooter', spec: '125cc · Geniş depo', tag: 'Ekonomik', img: 'https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=900&q=80' },
+    { name: 'Naked 500', cat: 'sport', spec: '500cc · Güçlü şehir motoru', tag: '', img: 'https://images.unsplash.com/photo-1580310614729-ccd69652491d?auto=format&fit=crop&w=900&q=80' },
+    { name: 'Trail 250', cat: 'adventure', spec: '250cc · Dual-sport', tag: '', img: 'https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?auto=format&fit=crop&w=900&q=80' },
+    { name: 'Retro 125', cat: '125', spec: '125cc · Klasik cafe racer', tag: 'Stil', img: 'https://images.unsplash.com/photo-1547549082-6bc09f2049ae?auto=format&fit=crop&w=900&q=80' },
+  ];
+  const bikesEl = document.getElementById('bikes');
+  function render(filter) {
+    bikesEl.innerHTML = bikes.filter(b => filter === 'all' || b.cat === filter).map(b => `
+      <article class="bike-card rounded-2xl overflow-hidden bg-ink-800 border border-white/5 group">
+        <div class="relative aspect-[4/3] overflow-hidden bg-ink-700">
+          <img src="${b.img}" alt="${b.name}" class="w-full h-full object-cover" loading="lazy"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-ink-950/80 via-transparent to-transparent"></div>
+          ${b.tag ? `<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-fire-500 text-white text-xs font-semibold">${b.tag}</span>` : ''}
+          <span class="absolute bottom-3 right-3 text-xs text-steel-200 uppercase tracking-wider bg-black/40 backdrop-blur px-2 py-1 rounded">${b.cat === '125' ? '125cc' : b.cat === 'scooter' ? 'Scooter' : b.cat === 'sport' ? 'Sport' : 'Adventure'}</span>
+        </div>
+        <div class="p-5">
+          <div class="flex items-start justify-between gap-3">
+            <div><h3 class="font-display text-2xl leading-tight">${b.name}</h3><p class="text-steel-400 text-sm mt-1">${b.spec}</p></div>
+            <div class="text-right"><div class="text-xs text-steel-500 uppercase tracking-wider">Fiyat</div><div class="font-semibold text-fire-500">Sorunuz</div></div>
+          </div>
+          <div class="mt-4 flex gap-2">
+            <a href="https://wa.me/905305616304?text=${encodeURIComponent(b.name + ' hakkında bilgi almak istiyorum.')}" target="_blank" rel="noopener" class="flex-1 text-center btn-fire px-4 py-2.5 rounded-full text-sm font-semibold">WhatsApp'ta Sor</a>
+            <a href="tel:+905305616304" class="w-10 h-10 rounded-full border border-white/10 grid place-items-center hover:border-fire-500 hover:text-fire-500 transition" aria-label="Ara">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.105a1.125 1.125 0 0 0-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97a1.125 1.125 0 0 0 .417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+    `).join('');
+  }
+  render('all');
+  document.querySelectorAll('.pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.pill').forEach(b => { b.classList.remove('active'); b.classList.add('text-steel-300'); b.classList.remove('text-white'); });
+      btn.classList.add('active'); btn.classList.add('text-white'); btn.classList.remove('text-steel-300');
+      render(btn.dataset.filter);
+    });
+  });
+  const nav = document.getElementById('nav');
+  const onScroll = () => { if (window.scrollY > 40) nav.classList.add('nav-scrolled'); else nav.classList.remove('nav-scrolled'); };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

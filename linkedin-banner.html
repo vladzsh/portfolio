@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LinkedIn Banner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #1a1a1a;
+  }
+
+  .banner {
+    width: 1584px;
+    height: 396px;
+    background-color: #0D0C0C;
+    background-image: radial-gradient(circle, #2A2929 1px, transparent 1px);
+    background-size: 14px 14px;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Quantico', sans-serif;
+  }
+
+  .text-block {
+    position: absolute;
+    right: 120px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+  }
+
+  .role {
+    font-size: 24px;
+    color: rgba(0, 128, 0, 0.95);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .url {
+    opacity: 0.75;
+    font-size: 24px;
+    color: #dedede;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+
+</style>
+</head>
+<body>
+  <div class="banner">
+    <div class="spotlight"></div>
+    <div class="spotlight-dots"></div>
+    <div class="text-block">
+      <div class="role">Full-Stack Developer</div>
+      <div class="url">vladzsh.org</div>
+    </div>
+  </div>
+</body>
+</html>
